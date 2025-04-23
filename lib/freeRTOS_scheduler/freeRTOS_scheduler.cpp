@@ -33,7 +33,7 @@ void sweepAndMeasureTask(void *pvParameters)
   
         distance = getDistanceCm();
   
-        currentAngleDistanceDislay(NULL);
+        //currentAngleDistanceDislay(NULL);
       }
   
       for (currentAngle = MAX_ANGLE; currentAngle > MIN_ANGLE; currentAngle--) 
@@ -46,7 +46,7 @@ void sweepAndMeasureTask(void *pvParameters)
   
         distance = getDistanceCm(); // Measure the distance
   
-        currentAngleDistanceDislay(NULL);
+        //currentAngleDistanceDislay(NULL);
       }
        
     }
@@ -62,7 +62,8 @@ void currentAngleDistanceDislay(void *pvParameters)
 
 void vApplicationIdleHook() 
 {
-    //printf("[IDLE] distance: %d\n\r", distance);
-    //printf("[IDLE] currentAngle: %d\n\r", currentAngle);
-    //vTaskDelay(pdMS_TO_TICKS(IDLE_TASK_SLEEP_TIME_MS));
+  printf("%d", currentAngle);
+  printf(",");
+  printf("%d", distance);
+  printf(".");
 }
